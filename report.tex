@@ -38,6 +38,19 @@
 % single space
 \usepackage{setspace}
 
+% section without number
+\makeatletter
+% we use \prefix@<level> only if it is defined
+\renewcommand{\@seccntformat}[1]{%
+  \ifcsname prefix@#1\endcsname
+    \csname prefix@#1\endcsname
+  \else
+    \csname the#1\endcsname\quad
+  \fi}
+% define \prefix@section
+\newcommand\prefix@section{}
+\makeatother
+
 % font
 %---------latex--------------
 % \usepackage[T1]{fontenc}
@@ -49,20 +62,19 @@
 % \begin{CJK}{UTF8}{bkai}
 % \begin{spacing}{1}
 
-% \begin{enumerate}
-% 	\item [\bf \large 一、] {\bf \large 前言}
+% \section{\bf \large 一、\bf \large 前言}
+% 	Reference Test \cite{website:google}
+% \section{\bf \large 二、\bf \large 研究目的與文獻探討}
+% 	\subsection{研究目的}
+% 	\subsection{文獻探討}
 
-% 		Reference Test \cite{website:google}
-% 	\item [\bf \large 二、]{\bf \large 研究目的與文獻探討}
+% \section{\bf \large 三、\bf \large 研究方法}
 
-% 	 \item [\bf \large 三、]{\bf \large 研究方法}
 
-% 	 \item [\bf \large 四、]{\bf \large 結果與討論}
-% \end{enumerate}
+% \section{\bf \large 四、\bf \large 結果與討論}
 
 % \bibliographystyle{ieeetr} 
 % \bibliography{references}
-		
 		
 
 % \end{spacing}
@@ -90,16 +102,17 @@
 
 \begin{document}
 \begin{spacing}{1}
-\begin{enumerate}
-	\item [\bf \large 一、] {\bf \large 前言}
 
-		Reference Test \cite{website:google}
-	\item [\bf \large 二、]{\bf \large 研究目的與文獻探討}
+\section{\bf \large 一、\bf \large 前言}
+	Reference Test \cite{website:google}
+\section{\bf \large 二、\bf \large 研究目的與文獻探討}
+	\subsection{研究目的}
+	\subsection{文獻探討}
 
-	 \item [\bf \large 三、]{\bf \large 研究方法}
+\section{\bf \large 三、\bf \large 研究方法}
 
-	 \item [\bf \large 四、]{\bf \large 結果與討論}
-\end{enumerate}
+
+\section{\bf \large 四、\bf \large 結果與討論}
 
 \bibliographystyle{ieeetr} 
 \bibliography{references}
