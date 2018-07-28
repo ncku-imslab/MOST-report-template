@@ -1,0 +1,109 @@
+\documentclass[12pt, a4paper,]{article}
+
+% layout
+% https://www.sharelatex.com/learn/Page_size_and_margins
+% 1 inch = 2.54 cm, 12 pt ＝ 0.1668 inch ＝ 0.4269 cm 
+\oddsidemargin 0cm
+\evensidemargin 0cm
+\topmargin -1.04cm
+\headheight 12pt
+\headsep 0.6131cm
+\textheight 246.2mm
+\textwidth 159.2mm
+\marginparsep 0cm
+\marginparwidth 0cm
+\footskip 1.04cm
+
+% package
+\usepackage{cite}
+\usepackage{amsmath,amssymb,amsfonts}
+\usepackage{multirow}
+% plots
+\usepackage{pgfplots}
+
+% header, footer (for page number)
+\usepackage{lastpage}  
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\fancyhead{} % clear setting
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+\setlength{\headwidth}{\textwidth}
+\renewcommand{\footnotesize}{\normalsize} 
+\lfoot{ }
+\cfoot{ \thepage }
+\rfoot{}
+
+% single space
+\usepackage{setspace}
+
+% font
+%---------latex--------------
+% \usepackage[T1]{fontenc}
+% \usepackage{CJKutf8} %CJK: https://sites.google.com/a/mathlab.tw/latex/zhong-wen-latex-xiang-guan/cjkcjk-latexdejibenfanli
+% \usepackage{newtxtext, newtxmath}
+% % not exact Times New Roman, use open source version "Nimbus Roman No9 L"   https://liam0205.me/2017/01/10/Times-New-Roman-and-LaTeX/
+
+% \begin{document}
+% \begin{CJK}{UTF8}{bkai}
+% \begin{spacing}{1}
+
+% \begin{enumerate}
+% 	\item [\bf \large 一、] {\bf \large 前言}
+
+% 		Reference Test \cite{website:google}
+% 	\item [\bf \large 二、]{\bf \large 研究目的與文獻探討}
+
+% 	 \item [\bf \large 三、]{\bf \large 研究方法}
+
+% 	 \item [\bf \large 四、]{\bf \large 結果與討論}
+% \end{enumerate}
+
+% \bibliographystyle{ieeetr} 
+% \bibliography{references}
+		
+		
+
+% \end{spacing}
+% \end{CJK}
+% \end{document}
+
+% -----------------------------------
+% -----------XeLatex--------------
+\usepackage[T1]{fontenc}
+
+% English font 
+% https://www.zhihu.com/question/20563044
+\usepackage{fontspec}
+	\setmainfont{Times New Roman}
+	\setsansfont{Arial}
+	\setmonofont{Courier}
+% % Chinese font
+\usepackage[BoldFont]{xeCJK}
+\setCJKmainfont{BiauKai}
+\setCJKmonofont{BiauKai}
+\XeTeXinputencoding "utf8"
+\XeTeXdefaultencoding "utf8"
+\XeTeXlinebreaklocale "zh"	% for linebreak
+\XeTeXlinebreakskip = 0pt plus 1pt	% for linebreak
+
+\begin{document}
+\begin{spacing}{1}
+\begin{enumerate}
+	\item [\bf \large 一、] {\bf \large 前言}
+
+		Reference Test \cite{website:google}
+	\item [\bf \large 二、]{\bf \large 研究目的與文獻探討}
+
+	 \item [\bf \large 三、]{\bf \large 研究方法}
+
+	 \item [\bf \large 四、]{\bf \large 結果與討論}
+\end{enumerate}
+
+\bibliographystyle{ieeetr} 
+\bibliography{references}
+
+\end{spacing}
+\end{document}
+% -----------------------------------
